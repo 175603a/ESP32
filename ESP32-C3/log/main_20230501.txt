@@ -1,0 +1,80 @@
+2023-05-01 17:47:38.034 core.py:74 INFO 2.1.99 start!
+2023-05-01 17:47:38.789 ui_main.py:303 INFO auto
+2023-05-01 17:47:38.790 ui_main.py:312 INFO zh_CN
+2023-05-01 17:47:38.836 usb_device.py:2480 INFO usb device ready!
+2023-05-01 17:47:38.936 ui_main.py:437 INFO ui start
+2023-05-01 17:47:44.466 core.py:74 INFO 2.1.99 start!
+2023-05-01 17:47:45.276 ui_main.py:303 INFO auto
+2023-05-01 17:47:45.276 ui_main.py:312 INFO zh_CN
+2023-05-01 17:47:45.358 usb_device.py:2480 INFO usb device ready!
+2023-05-01 17:47:45.378 ui_main.py:437 INFO ui start
+2023-05-01 17:47:57.556 my_api.py:114 INFO [None, None]
+2023-05-01 17:47:57.557 host_device.py:651 INFO enter Trace
+2023-05-01 17:48:01.533 my_api.py:114 INFO [None, None]
+2023-05-01 17:48:01.534 usb_device.py:750 INFO usb device sleep
+2023-05-01 17:48:01.534 host_device.py:655 INFO quit Trace
+2023-05-01 17:48:01.554 my_api.py:114 INFO [None, None]
+2023-05-01 19:14:19.484 usb_device.py:750 INFO usb device sleep
+2023-05-01 19:14:19.484 my_api.py:114 INFO [None, None]
+2023-05-01 19:14:19.485 my_api.py:114 INFO [None, None]
+2023-05-01 19:14:19.590 my_api.py:114 INFO [None, None]
+2023-05-01 19:14:19.590 host_device.py:666 INFO task quit
+2023-05-01 19:14:19.591 my_api.py:114 INFO [None, None]
+2023-05-01 19:14:19.591 usb_device.py:2509 INFO task quit
+2023-05-01 19:14:19.866 core.py:244 INFO event loop closed
+2023-05-01 19:14:20.356 core.py:267 INFO end!
+2023-05-01 19:14:26.866 my_api.py:114 INFO [None, None]
+2023-05-01 19:14:26.866 host_device.py:651 INFO enter Trace
+2023-05-01 19:14:38.019 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:14:49.035 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:00.089 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:11.112 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:11.113 host_device.py:496 INFO chip disconnect
+2023-05-01 19:15:22.161 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:33.206 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:44.232 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:55.291 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:15:55.291 host_device.py:496 INFO chip disconnect
+2023-05-01 19:16:06.333 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:16:17.345 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:16:28.372 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:16:39.431 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:16:39.432 host_device.py:496 INFO chip disconnect
+2023-05-01 19:16:50.443 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:17:01.474 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:17:12.536 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:17:23.544 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:17:23.544 host_device.py:496 INFO chip disconnect
+2023-05-01 19:17:34.605 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:17:45.608 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:17:56.644 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:18:07.647 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:18:07.647 host_device.py:496 INFO chip disconnect
+2023-05-01 19:18:18.695 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:18:29.713 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:18:40.723 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:18:51.776 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:18:51.777 host_device.py:496 INFO chip disconnect
+2023-05-01 19:19:02.777 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:19:13.803 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:19:24.812 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:19:35.831 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:19:35.832 host_device.py:496 INFO chip disconnect
+2023-05-01 19:19:46.837 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:19:57.851 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:20:08.896 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:20:19.915 host_device.py:489 INFO COM16 reopen
+2023-05-01 19:20:19.915 host_device.py:496 INFO chip disconnect
+2023-05-01 19:20:26.741 usb_device.py:750 INFO usb device sleep
+2023-05-01 19:20:26.741 my_api.py:114 INFO [None, None]
+2023-05-01 19:20:26.770 my_api.py:114 INFO [None, None]
+2023-05-01 19:20:26.770 host_device.py:655 INFO quit Trace
+2023-05-01 19:20:28.009 usb_device.py:750 INFO usb device sleep
+2023-05-01 19:20:28.009 my_api.py:114 INFO [None, None]
+2023-05-01 19:20:28.010 my_api.py:114 INFO [None, None]
+2023-05-01 19:20:28.114 my_api.py:114 INFO [None, None]
+2023-05-01 19:20:28.114 host_device.py:666 INFO task quit
+2023-05-01 19:20:28.115 my_api.py:114 INFO [None, None]
+2023-05-01 19:20:28.115 usb_device.py:2509 INFO task quit
+2023-05-01 19:20:28.391 core.py:244 INFO event loop closed
+2023-05-01 19:20:28.745 core.py:267 INFO end!

@@ -1,0 +1,139 @@
+
+    
+////////////////////////////
+/*
+ * SPDX-FileCopyrightText: 2010-2022 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: CC0-1.0
+ */
+
+#include <stdio.h>
+#include <inttypes.h>
+#include "sdkconfig.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/FreeRTOSConfig.h"
+#include "esp_task_wdt.h"
+#include "esp_chip_info.h"
+#include "esp_flash.h"
+#include "esp32s2/rom/ets_sys.h"
+#include "driver/gpio.h"
+#include "unistd.h"
+
+//@brief: dht11_read
+//@param: temp 温度
+//@param: humi 湿度
+//@return: 0 成功
+//@return: -1 失败
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "driver/gpio.h"
+
+#define DHT11_PIN GPIO_NUM_17
+static void vTaskDelayMicros(uint32_t us)
+{
+    for (uint32_t i = 0; i < us * 2; i++) {
+        asm volatile("nop");
+    }
+}
+int dht11_read(uint8_t *temperature, uint8_t *humidity)
+{
+    uint8_t data[5] = {0};
+    uint8_t checksum = 0;
+
+    // 发送开始信号
+    gpio_set_direction(DHT11_PIN, GPIO_MODE_OUTPUT);
+    gpio_set_level(DHT11_PIN, 0);
+    vTaskDelay(20 / portTICK_PERIOD_MS);
+    gpio_set_level(DHT11_PIN, 1);
+    vTaskDelayMicros(40);
+    gpio_set_direction(DHT11_PIN, GPIO_MODE_INPUT);
+
+    // 等待 DHT11 响应
+    while (gpio_get_level(DHT11_PIN) == 0)
+    {
+        vTaskDelayMicros(1);
+    }
+    while (gpio_get_level(DHT11_PIN) == 1)
+    {
+        vTaskDelayMicros(1);
+    }
+
+    // 读取数据
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            while (gpio_get_level(DHT11_PIN) == 0)
+            {
+                vTaskDelayMicros(1);
+            }
+            vTaskDelayMicros(30);
+            if (gpio_get_level(DHT11_PIN) == 1)
+            {
+                data[i] |= (1 << (7 - j));
+                while (gpio_get_level(DHT11_PIN) == 1)
+                {
+                    vTaskDelayMicros(1);
+                }
+            }
+        }
+    }
+
+    // 校验数据
+    checksum = data[0] + data[1] + data[2] + data[3];
+    if (checksum != data[4])
+    {
+        return -1;  // 校验失败
+    }
+
+    *humidity = data[0];
+    *temperature = data[2];
+
+    return 0;  // 读取成功
+}
+
+//dht11_task
+void dht11_task(void *pvParameters)
+{
+    //读取DHT11温湿度
+    while (1)
+    {
+        //读取温湿度
+        uint8_t temp = 0;
+        uint8_t humi = 0;
+        dht11_read(&temp, &humi);
+        //打印温湿度
+        printf("temp:%d humi:%d\n", temp, humi);
+        //延时1s
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
+}
+
+void app_main(void)
+{
+    printf("Hello world!\n");
+
+    /* Print chip information */
+    esp_chip_info_t chip_info;
+    uint32_t flash_size;
+    esp_chip_info(&chip_info);
+    printf("This is %s chip with %d CPU core(s), WiFi%s%s, ",
+           CONFIG_IDF_TARGET,
+           chip_info.cores,
+           (chip_info.features & CHIP_FEATURE_BT) ? "/BT" : "",
+           (chip_info.features & CHIP_FEATURE_BLE) ? "/BLE" : "");
+
+    unsigned major_rev = chip_info.revision / 100;
+    unsigned minor_rev = chip_info.revision % 100;
+    printf("silicon revision v%d.%d, ", major_rev, minor_rev);
+    if(esp_flash_get_size(NULL, &flash_size) != ESP_OK) {
+        printf("Get flash size failed");
+        return;
+    }
+    printf("%" PRIu32 "MB %s flash\n", flash_size / (uint32_t)(1024 * 1024),
+           (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
+
+    //创建任务
+    xTaskCreate(&dht11_task, "dht11_task", 2048, NULL, 5, NULL);
+}
