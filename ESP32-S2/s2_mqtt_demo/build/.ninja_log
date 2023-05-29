@@ -934,3 +934,5 @@
 8593	8935	7069816777257455	D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_mqtt_demo/build/.bin_timestamp	8c4ac3354c6c522c
 8936	9045	0	esp-idf/esptool_py/CMakeFiles/app_check_size	c3ac68f14f80e499
 8936	9045	0	D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_mqtt_demo/build/esp-idf/esptool_py/CMakeFiles/app_check_size	c3ac68f14f80e499
+0	55166717	0	CMakeFiles/confserver	453049eb60f9c88c
+0	55166717	0	D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_mqtt_demo/build/CMakeFiles/confserver	453049eb60f9c88c
