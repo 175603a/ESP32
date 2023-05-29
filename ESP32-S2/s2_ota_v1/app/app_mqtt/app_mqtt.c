@@ -95,7 +95,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
         ESP_LOGI(TAG, "MQTT_EVENT_DATA");
         printf("TOPIC=%.*s\r\n", event->topic_len, event->topic);
         printf("DATA=%.*s\r\n", event->data_len, event->data);
-        if(xQueueSend(mqttmessageQueue, &event, portMAX_DELAY) == pdPASS) // 发送消息到队列
+        if(xQueueSend(mqttmessageQueue, (event->data), portMAX_DELAY) == pdPASS) // 发送消息到队列
         {
             ESP_LOGI(TAG, "Send message to queue success");
         }
@@ -159,13 +159,13 @@ void mqtt_app_start(void)
 #endif /* CONFIG_BROKER_URL_FROM_STDIN */
 
     esp_mqtt_client_handle_t client = esp_mqtt_client_init(&mqtt_cfg);
-    mqttmessageQueue = xQueueCreate(5, sizeof(esp_mqtt_event_t));
+    mqttmessageQueue = xQueueCreate(5, 128);
     if (mqttmessageQueue == NULL)
     {
         printf("Failed to create message queue!\n");
         // 队列创建失败的处理逻辑
     }
-    xTaskCreate(mqtt_message_receive_task, "mqtt_message_receive_task", 4096, mqttmessageQueue, 2, NULL); // 创建MQTT消息处理任务
+    xTaskCreate(mqtt_message_receive_task, "mqtt_message_receive_task", 2048, mqttmessageQueue, 2, NULL); // 创建MQTT消息处理任务
     /* The last argument may be used to pass data to the event handler, in this example mqtt_event_handler */
     esp_mqtt_client_register_event(client, ESP_EVENT_ANY_ID, mqtt_event_handler, mqttmessageQueue);
     esp_mqtt_client_start(client);
@@ -175,20 +175,16 @@ void mqtt_app_start(void)
 void mqtt_message_receive_task(void *param)
 {
     QueueHandle_t mqttmessageQueue; // 消息队列
-    esp_mqtt_event_handle_t receivedMessage;
+    char receivedMessage[128];
     mqttmessageQueue = (QueueHandle_t)param;
 
     while (1)
     {
         if (xQueueReceive(mqttmessageQueue, &receivedMessage, portMAX_DELAY) == pdTRUE)
         {
-            char messageBuffer[256]; // 假设消息最大长度为 256
-            strncpy(messageBuffer, (char *)receivedMessage->data, receivedMessage->data_len);
-            messageBuffer[receivedMessage->data_len] = '\0'; // 添加字符串结束符
+            printf("DATA=%s\r\n", receivedMessage);
 
-            printf("DATA=%s\r\n", messageBuffer);
-
-            cJSON *root = cJSON_Parse(messageBuffer);
+            cJSON *root = cJSON_Parse(receivedMessage);
             if (root == NULL)
             {
                 printf("JSON parsing error!\n");
