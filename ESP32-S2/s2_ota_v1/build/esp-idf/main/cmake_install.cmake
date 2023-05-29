@@ -1,4 +1,4 @@
-# Install script for directory: D:/51-STM-ESP-GD/ESP/ESP32-S2/s2_ota_v1/main
+# Install script for directory: D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -213,7 +213,7 @@ void mqtt_message_receive_task(void *param)
                             {
                                 const char *path_value = path->valuestring;
                                 //向mqtt服务器发送响应
-                                esp_mqtt_client_publish(client, "/topic/qos0", "ota_update recved", 0, 0, 0);
+                                // esp_mqtt_client_publish(client, "/topic/qos0", "ota_update recved", 0, 0, 0);
                                 app_ota(path_value); // 执行 OTA 更新操作
                             }
                         }

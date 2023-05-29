@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/51-STM-ESP-GD/ESP/ESP32-S2/s2_ota_v1/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
-  include("D:/51-STM-ESP-GD/ESP/ESP32-S2/s2_ota_v1/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
-  include("D:/51-STM-ESP-GD/ESP/ESP32-S2/s2_ota_v1/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/mbedtls/mbedtls/include/cmake_install.cmake")
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/mbedtls/mbedtls/3rdparty/cmake_install.cmake")
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/mbedtls/mbedtls/library/cmake_install.cmake")
 
 endif()
 
