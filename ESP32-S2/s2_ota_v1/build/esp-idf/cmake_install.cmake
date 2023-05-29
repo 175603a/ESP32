@@ -394,11 +394,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/main/cmake_install.cmake")
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/app_ota/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/protocol_examples_common/cmake_install.cmake")
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/app_mqtt/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/app_smartconfig/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/main/cmake_install.cmake")
 endif()
 

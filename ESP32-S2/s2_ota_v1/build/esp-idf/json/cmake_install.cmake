@@ -1,4 +1,4 @@
-# Install script for directory: C:/Espressif/frameworks/esp-idf-v5.0.1/components/json
+# Install script for directory: D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/components/json
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

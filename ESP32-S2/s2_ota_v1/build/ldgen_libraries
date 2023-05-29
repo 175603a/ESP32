@@ -60,5 +60,7 @@ D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/touch_element/libtou
 D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/ulp/libulp.a
 D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/usb/libusb.a
 D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
+D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/app_ota/libapp_ota.a
+D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/app_mqtt/libapp_mqtt.a
+D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/app_smartconfig/libapp_smartconfig.a
 D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/main/libmain.a
-D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/build/esp-idf/protocol_examples_common/libprotocol_examples_common.a

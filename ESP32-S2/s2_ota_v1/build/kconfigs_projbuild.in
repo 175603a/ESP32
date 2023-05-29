@@ -4,4 +4,3 @@ source "C:/Espressif/frameworks/esp-idf-v5.0.1/components/esp_rom/Kconfig.projbu
 source "C:/Espressif/frameworks/esp-idf-v5.0.1/components/esptool_py/Kconfig.projbuild"
 source "C:/Espressif/frameworks/esp-idf-v5.0.1/components/partition_table/Kconfig.projbuild"
 source "D:/51-STM-ESP-GD/ESP/ESP32/ESP32-S2/s2_ota_v1/main/Kconfig.projbuild"
-source "C:/Espressif/frameworks/esp-idf-v5.0.1/examples/common_components/protocol_examples_common/Kconfig.projbuild"

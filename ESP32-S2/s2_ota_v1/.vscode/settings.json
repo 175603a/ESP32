@@ -14,5 +14,14 @@
     "idf.portWin": "COM6",
     "idf.pythonBinPathWin": "C:\\Espressif\\python_env\\idf5.0_py3.8_env\\Scripts\\python.exe",
     "idf.toolsPathWin": "C:\\Espressif",
-    "idf.flashType": "UART"
+    "idf.flashType": "UART",
+    "files.associations": {
+        "esp_system.h": "c",
+        "nvs_flash.h": "c",
+        "esp_event.h": "c",
+        "esp_netif.h": "c",
+        "mqtt_client.h": "c",
+        "app_smartconfig.h": "c",
+        "esp_crt_bundle.h": "c"
+    }
 }
