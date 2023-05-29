@@ -1,0 +1,8 @@
+{
+    "command": {
+        "type": "ota_update",
+        "content": {
+            "path": "s2_dht11_v2.bin"
+        }
+    }
+}
